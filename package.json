@@ -1,0 +1,27 @@
+{
+  "name": "designpatterns.docs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "VitePress documentation site for Skymly/DesignPatterns",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Skymly/DesignPatterns.Docs.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "keywords": [
+    "design-patterns",
+    "vitepress",
+    "roslyn",
+    "source-generators",
+    "dotnet"
+  ],
+  "devDependencies": {
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.35"
+  }
+}

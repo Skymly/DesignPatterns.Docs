@@ -1,0 +1,41 @@
+# Strategy
+
+Namespace: `DesignPatterns.Behavioral`
+
+## Overview
+
+Register algorithm implementations by key at compile time. Avoid large `switch` blocks while keeping selection logic in your application code.
+
+## Runtime
+
+- `IStrategyRegistry<TKey, TStrategy>` — `Get` / `TryGet`
+- `StrategyRegistryBuilder<TKey, TStrategy>` — manual registration
+
+## Source generator
+
+1. Declare a **partial** static registry holder.
+2. Mark each implementation with `[RegisterStrategy(typeof(TContract), "key")]`.
+3. Generator emits `{Name}Keys`, `Instance` (eager registry), and optional `RegisterDi`.
+
+```csharp
+[RegisterStrategy(typeof(IPaymentStrategy), "alipay")]
+public sealed class AlipayPayment : IPaymentStrategy { ... }
+
+public static partial class PaymentStrategyRegistry { }
+```
+
+Optional marker interfaces: `IStrategy<TIn, TOut>`, `IAsyncStrategy<TIn, TOut>` — not required by the generator.
+
+## Diagnostics
+
+DP003–DP007 — duplicate keys, contract mismatch, unregistered types, missing ctor.
+
+## Sample
+
+[DesignPatterns.Samples.Strategy](https://github.com/Skymly/DesignPatterns.Samples/tree/main/DesignPatterns.Samples.Strategy)
+
+## DI
+
+See [Dependency Injection](./dependency-injection.md) for `RegisterDi`.
+
+Maintainer doc: [docs/Strategy.md](https://github.com/Skymly/DesignPatterns/blob/main/docs/Strategy.md) (中文).
