@@ -2,7 +2,9 @@
 
 ## Scope
 
-Documentation site only (VitePress). Runtime, generator, and analyzer changes belong in [DesignPatterns](https://github.com/Skymly/DesignPatterns).
+Documentation site only (VitePress). Generator and API changes belong in [DesignPatterns](https://github.com/Skymly/DesignPatterns).
+
+Live site: https://skymly.github.io/DesignPatterns.Docs/
 
 ## Commands
 
