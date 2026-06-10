@@ -27,7 +27,7 @@ CI checks out both repositories so the sibling path `../DesignPatterns` resolves
 
 | Sample | Demonstrates |
 |--------|--------------|
-| **DesignPatterns.Samples.Strategy** | `[RegisterStrategy]` → Keys + static `Instance` |
+| **DesignPatterns.Samples.Strategy** | `[RegisterStrategy]` → Keys + static `Instance`; sync pay + async `ExecuteAsync` |
 | **DesignPatterns.Samples.Chain** | `[HandlerOrder]` → handler pipeline |
 | **DesignPatterns.Samples.Composite** | `[CompositePart]` → `BuildForest()` / `TraverseForest` (+ manual builder) |
 | **DesignPatterns.Samples.Factory** | `[RegisterFactory]` generated registry |

@@ -19,6 +19,23 @@
 
 可选标记接口：`IStrategy<TIn, TOut>`、`IAsyncStrategy<TIn, TOut>` — 生成器不强制要求。
 
+## 异步解析
+
+`IAsyncStrategy` 契约复用同一套 Keys / Registry / `RegisterDi`。`StrategyRegistryExtensions` 提供 `ExecuteAsync` / `TryExecuteAsync`：
+
+```csharp
+public interface ITextProcessor : IAsyncStrategy<string, int> { }
+
+// 注册表值为 IAsyncStrategy<TIn, TOut>
+await registry.ExecuteAsync(key, input);
+
+// 派生契约（显式指定 TContract、TOutput、TInput）
+await registry.ExecuteAsync<ITextProcessor, int, string>(TextProcessorKeys.Length, "hello");
+
+// 等价写法
+await registry.Get(TextProcessorKeys.Length).ExecuteAsync("hello");
+```
+
 ## 诊断
 
 DP003–DP007 — 见 [诊断](./diagnostics.md)。
