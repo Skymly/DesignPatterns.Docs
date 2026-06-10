@@ -29,7 +29,7 @@ CI checks out both repositories so the sibling path `../DesignPatterns` resolves
 |--------|--------------|
 | **DesignPatterns.Samples.Strategy** | `[RegisterStrategy]` → Keys + static `Instance` |
 | **DesignPatterns.Samples.Chain** | `[HandlerOrder]` → handler pipeline |
-| **DesignPatterns.Samples.Composite** | `[CompositePart]` → catalog + `BuildRoot()` |
+| **DesignPatterns.Samples.Composite** | `[CompositePart]` → `BuildForest()` / `TraverseForest` (+ manual builder) |
 | **DesignPatterns.Samples.Factory** | `[RegisterFactory]` generated registry |
 | **DesignPatterns.Samples.RegisterFactory** | Manual `FactoryRegistryBuilder` |
 | **DesignPatterns.Samples.Decorator** | `[Decorator]` decorator stack |
