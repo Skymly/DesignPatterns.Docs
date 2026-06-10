@@ -27,7 +27,7 @@ dotnet run --project DesignPatterns.Samples.Strategy -c Release
 |------|----------|
 | **DesignPatterns.Samples.Strategy** | `[RegisterStrategy]` → Keys + `Instance` |
 | **DesignPatterns.Samples.Chain** | `[HandlerOrder]` 管道 |
-| **DesignPatterns.Samples.Composite** | `[CompositePart]` + `BuildRoot()` |
+| **DesignPatterns.Samples.Composite** | `[CompositePart]` + `BuildForest()` / `TraverseForest`（含手动 builder） |
 | **DesignPatterns.Samples.Factory** | 生成器工厂注册表 |
 | **DesignPatterns.Samples.RegisterFactory** | 手动 `FactoryRegistryBuilder` |
 | **DesignPatterns.Samples.Decorator** | 装饰器栈 |
