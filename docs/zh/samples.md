@@ -25,7 +25,7 @@ dotnet run --project DesignPatterns.Samples.Strategy -c Release
 
 | 示例 | 演示内容 |
 |------|----------|
-| **DesignPatterns.Samples.Strategy** | `[RegisterStrategy]` → Keys + `Instance` |
+| **DesignPatterns.Samples.Strategy** | `[RegisterStrategy]` → Keys + `Instance`；同步支付 + 异步 `ExecuteAsync` |
 | **DesignPatterns.Samples.Chain** | `[HandlerOrder]` 管道 |
 | **DesignPatterns.Samples.Composite** | `[CompositePart]` + `BuildForest()` / `TraverseForest`（含手动 builder） |
 | **DesignPatterns.Samples.Factory** | 生成器工厂注册表 |

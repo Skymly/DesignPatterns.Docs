@@ -26,6 +26,23 @@ public static partial class PaymentStrategyRegistry { }
 
 Optional marker interfaces: `IStrategy<TIn, TOut>`, `IAsyncStrategy<TIn, TOut>` — not required by the generator.
 
+## Async resolution
+
+`IAsyncStrategy` contracts use the same Keys / Registry / `RegisterDi` pipeline. `StrategyRegistryExtensions` adds `ExecuteAsync` and `TryExecuteAsync`:
+
+```csharp
+public interface ITextProcessor : IAsyncStrategy<string, int> { }
+
+// Registry value is IAsyncStrategy<TIn, TOut>
+await registry.ExecuteAsync(key, input);
+
+// Derived contract (specify TContract, TOutput, TInput)
+await registry.ExecuteAsync<ITextProcessor, int, string>(TextProcessorKeys.Length, "hello");
+
+// Equivalent
+await registry.Get(TextProcessorKeys.Length).ExecuteAsync("hello");
+```
+
 ## Diagnostics
 
 DP003–DP007 — duplicate keys, contract mismatch, unregistered types, missing ctor.
