@@ -30,7 +30,7 @@ dotnet run --project DesignPatterns.Samples.Strategy -c Release
 | **DesignPatterns.Samples.Composite** | `[CompositePart]` + `BuildForest()` / `TraverseForest`（含手动 builder） |
 | **DesignPatterns.Samples.Factory** | 生成器工厂注册表 |
 | **DesignPatterns.Samples.RegisterFactory** | 手动 `FactoryRegistryBuilder` |
-| **DesignPatterns.Samples.Decorator** | 装饰器栈 |
+| **DesignPatterns.Samples.Decorator** | `[Decorator]` 栈 + `DecoratorOrder` 常量 + 条件 `Add` |
 | **DesignPatterns.Samples.EventAggregator** | 事件聚合器 |
 | **DesignPatterns.Samples.GenerateSingleton** | `[GenerateSingleton]` |
 | **DesignPatterns.Samples.DependencyInjection** | Strategy / Factory / Handler 的 `RegisterDi` |

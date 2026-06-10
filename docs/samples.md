@@ -32,7 +32,7 @@ CI checks out both repositories so the sibling path `../DesignPatterns` resolves
 | **DesignPatterns.Samples.Composite** | `[CompositePart]` → `BuildForest()` / `TraverseForest` (+ manual builder) |
 | **DesignPatterns.Samples.Factory** | `[RegisterFactory]` generated registry |
 | **DesignPatterns.Samples.RegisterFactory** | Manual `FactoryRegistryBuilder` |
-| **DesignPatterns.Samples.Decorator** | `[Decorator]` decorator stack |
+| **DesignPatterns.Samples.Decorator** | `[Decorator]` stack + `DecoratorOrder` constants + conditional `Add` |
 | **DesignPatterns.Samples.EventAggregator** | `IEventAggregator` pub/sub |
 | **DesignPatterns.Samples.GenerateSingleton** | `[GenerateSingleton]` |
 | **DesignPatterns.Samples.DependencyInjection** | `RegisterDi` for Strategy / Factory / Handler |
