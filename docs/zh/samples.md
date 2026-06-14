@@ -6,7 +6,7 @@
 
 ## 运行（默认 sibling 本地引用）
 
-需要 .NET 8 与 sibling `DesignPatterns` 克隆（`UseLocalDesignPatterns=true`）。
+需要 .NET 8 与 sibling `DesignPatterns` 克隆（示例仓默认 `UseLocalDesignPatterns=true`）。
 
 ```powershell
 git clone https://github.com/Skymly/DesignPatterns.git
@@ -20,6 +20,8 @@ dotnet run --project DesignPatterns.Samples.Strategy -c Release
 ```powershell
 ./build.ps1 --target Ci --configuration Release
 ```
+
+主仓 [DesignPatterns](https://github.com/Skymly/DesignPatterns) CI 会 checkout 两个仓库，使 sibling 路径 `../DesignPatterns` 可用。
 
 ## 项目一览
 
@@ -35,8 +37,20 @@ dotnet run --project DesignPatterns.Samples.Strategy -c Release
 | **DesignPatterns.Samples.GenerateSingleton** | `[GenerateSingleton]` |
 | **DesignPatterns.Samples.DependencyInjection** | Strategy / Factory / Handler 的 `RegisterDi` |
 
-主仓 `DesignPatterns/samples/` 仍保留副本供主仓 CI 使用。
+## NuGet 消费
 
-## 未来 NuGet 消费
+**`Skymly.DesignPatterns`** 已发布至 [nuget.org](https://www.nuget.org/packages/Skymly.DesignPatterns)（预览）。在示例仓关闭 sibling 项目引用：
 
-包发布后可在示例仓设置 `-p:UseLocalDesignPatterns=false`。
+```powershell
+dotnet run --project DesignPatterns.Samples.Strategy -c Release -p:UseLocalDesignPatterns=false
+```
+
+或在 `Directory.Build.props` / `Directory.Build.targets` 中将 `UseLocalDesignPatterns` 设为 `false`。
+
+::: info 已弃用包 ID
+勿使用旧 GitHub 包 ID `DesignPatterns`（`0.1.0-preview1` / `preview2`）。请使用 nuget.org 上的 **`Skymly.DesignPatterns`**。
+:::
+
+安装说明见 [快速开始](./getting-started.md)。
+
+英文版：[Samples](../samples.md)

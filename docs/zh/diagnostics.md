@@ -2,6 +2,8 @@
 
 DesignPatterns 源生成器与分析器发出的编译器诊断。ID 定义于 `DesignPatterns.Diagnostics.DiagnosticIds`。
 
+IDE 帮助链接指向本页（`#dp###` 锚点）。
+
 ## Singleton（DP001–DP002）
 
 | ID | 级别 | 触发条件 |
@@ -15,7 +17,7 @@ DesignPatterns 源生成器与分析器发出的编译器诊断。ID 定义于 `
 |----|------|----------|
 | **DP003** | Error | 策略 Key 重复 |
 | **DP004** | Error | 实现与策略契约不匹配 |
-| **DP006** | Warning | 实现类型未用 `[RegisterStrategy]` 注册 |
+| **DP006** | Info | 实现类型未用 `[RegisterStrategy]` 注册 |
 | **DP007** | Error | 缺少无参构造函数 |
 
 ## 责任链（DP005、DP008–DP009、DP024）
@@ -25,7 +27,7 @@ DesignPatterns 源生成器与分析器发出的编译器诊断。ID 定义于 `
 | **DP005** | Error | `[HandlerOrder]` 顺序重复 |
 | **DP008** | Error | Handler 未实现管道契约 |
 | **DP009** | Error | Handler 缺少无参构造函数 |
-| **DP024** | Warning | Handler 未用 `[HandlerOrder]` 注册 |
+| **DP024** | Info | Handler 未用 `[HandlerOrder]` 注册 |
 
 ## Composite（DP010–DP015）
 
@@ -54,10 +56,39 @@ DesignPatterns 源生成器与分析器发出的编译器诊断。ID 定义于 `
 | **DP020** | Error | Factory Key 重复 |
 | **DP021** | Error | Factory 与产品契约不匹配 |
 | **DP022** | Error | Factory 缺少无参构造函数 |
-| **DP023** | Warning | 产品类型未用 `[RegisterFactory]` 注册 |
+| **DP023** | Info | 产品类型未用 `[RegisterFactory]` 注册 |
+
+## 注册表 Key（DP025） {#注册表-key-dp025}
+
+| ID | 级别 | 触发条件 |
+|----|------|----------|
+| **DP025** | Info | 传入生成 **Strategy** / **Factory** 注册表查找的字符串字面量 key 不在已注册列表中 |
+
+**作用范围：** `IStrategyRegistry<,>` / `IFactoryRegistry<,>` 的 `Get` / `TryGet` / `Create` / `TryCreate`，且 key 参数为字符串字面量（非 `{Contract}Keys` 常量）。
+
+**消息：** 包含契约类型与已注册 key 列表。
+
+**修复：** 优先使用 `{Contract}Keys.*`。拼写接近已知 key 时，**CorrectRegistryKey** CodeFix 可替换为最近键。
+
+另见 [注册表 Key 命名约定](./registry-key-conventions.md)。
 
 ## CodeFix
 
-`DesignPatterns.CodeFixes` 为部分警告（如 DP024）提供修复。类别前缀：**`DesignPatterns`**。
+`DesignPatterns.CodeFixes` 随 **`Skymly.DesignPatterns`** 元包分发（`analyzers/dotnet/cs`）。下列诊断支持 IDE 一键修复（需 C# Workspaces）：
+
+| 诊断 | CodeFix（摘要） |
+|------|----------------|
+| **DP006** | 添加 `[RegisterStrategy("key", typeof(TContract))]` |
+| **DP023** | 添加 `[RegisterFactory("key", typeof(TContract))]` |
+| **DP024** | 添加 `[HandlerOrder(order, typeof(TContext))]` |
+| **DP025** | 将字面量替换为最近注册 key |
+| DP001 | 添加 `partial` |
+| DP015 | 添加 `[CompositeBuildable]` |
+| DP004 / DP013 / DP017 / DP021 | 补全契约实现 |
+| DP007 / DP009 / DP014 / DP019 / DP022 | 添加无参构造函数 |
+
+生成器 Error（如 DP003、DP020 重复 key）需改 attribute 或类型；不提供 CodeFix。
+
+类别前缀：**`DesignPatterns`**。
 
 英文完整版：[Diagnostics](../diagnostics.md)

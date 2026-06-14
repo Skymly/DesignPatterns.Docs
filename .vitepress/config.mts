@@ -24,6 +24,7 @@ const enSidebar = [
     ],
   },
   { text: 'Diagnostics', link: '/diagnostics' },
+  { text: 'Registry key conventions', link: '/registry-key-conventions' },
   { text: 'Samples', link: '/samples' },
   { text: 'Reference & links', link: '/reference' },
 ]
@@ -47,6 +48,7 @@ const zhSidebar = [
     ],
   },
   { text: '诊断', link: '/zh/diagnostics' },
+  { text: 'Key 命名约定', link: '/zh/registry-key-conventions' },
   { text: '示例', link: '/zh/samples' },
   { text: '参考与链接', link: '/zh/reference' },
 ]

@@ -22,7 +22,7 @@ public sealed class StandardProductFactory : IProductFactory { ... }
 
 ## Diagnostics
 
-DP020–DP023.
+DP020–DP023, [DP025](./diagnostics.md#registry-key-dp025) (unknown literal keys). See [Registry key conventions](./registry-key-conventions.md).
 
 ## Samples
 

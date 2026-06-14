@@ -38,7 +38,7 @@ await registry.Get(TextProcessorKeys.Length).ExecuteAsync("hello");
 
 ## 诊断
 
-DP003–DP007 — 见 [诊断](./diagnostics.md)。
+DP003–DP007；字面量 key 见 [DP025](./diagnostics.md#注册表-key-dp025)。[Key 命名约定](./registry-key-conventions.md)。
 
 ## 示例
 

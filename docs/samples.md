@@ -6,7 +6,7 @@ Runnable console applications:
 
 ## Run (local sibling, default)
 
-Requires .NET 8 and a sibling `DesignPatterns` clone (`UseLocalDesignPatterns=true` by default).
+Requires .NET 8 and a sibling `DesignPatterns` clone (`UseLocalDesignPatterns=true` by default in the samples repo).
 
 ```powershell
 git clone https://github.com/Skymly/DesignPatterns.git
@@ -21,7 +21,7 @@ dotnet run --project DesignPatterns.Samples.Strategy -c Release
 ./build.ps1 --target Ci --configuration Release
 ```
 
-CI checks out both repositories so the sibling path `../DesignPatterns` resolves.
+The main [DesignPatterns](https://github.com/Skymly/DesignPatterns) CI checks out both repositories so the sibling path `../DesignPatterns` resolves.
 
 ## Projects
 
@@ -37,8 +37,18 @@ CI checks out both repositories so the sibling path `../DesignPatterns` resolves
 | **DesignPatterns.Samples.GenerateSingleton** | `[GenerateSingleton]` |
 | **DesignPatterns.Samples.DependencyInjection** | `RegisterDi` for Strategy / Factory / Handler |
 
-In-repo copies also exist under `DesignPatterns/samples/` for the main repository CI.
+## NuGet consumption
 
-## Future NuGet consumption
+Package **`Skymly.DesignPatterns`** is on [nuget.org](https://www.nuget.org/packages/Skymly.DesignPatterns) (preview). In the samples repo, switch off the sibling project reference:
 
-When `DesignPatterns` is published, set `-p:UseLocalDesignPatterns=false` in the samples repo.
+```powershell
+dotnet run --project DesignPatterns.Samples.Strategy -c Release -p:UseLocalDesignPatterns=false
+```
+
+Or set `UseLocalDesignPatterns` to `false` in `Directory.Build.props` / `Directory.Build.targets` when you only consume the published package.
+
+::: info Deprecated package ID
+Do not use the old GitHub-only ID `DesignPatterns` (`0.1.0-preview1` / `preview2`). Use **`Skymly.DesignPatterns`** on nuget.org.
+:::
+
+See [Getting started](./getting-started.md) for `PackageReference` and version pinning.

@@ -31,6 +31,9 @@
 
 主仓中文设计文档：
 
+- [docs/README.md](https://github.com/Skymly/DesignPatterns/blob/main/docs/README.md) — 内部文档索引
 - [docs/DEVELOPMENT.md](https://github.com/Skymly/DesignPatterns/blob/main/docs/DEVELOPMENT.md)
+- [docs/PUBLISHING.md](https://github.com/Skymly/DesignPatterns/blob/main/docs/PUBLISHING.md)
+- [docs/FactoryKeyConventions.md](https://github.com/Skymly/DesignPatterns/blob/main/docs/FactoryKeyConventions.md)
 - [docs/ROADMAP.md](https://github.com/Skymly/DesignPatterns/blob/main/docs/ROADMAP.md)
 - `DesignPatterns/docs/*.md` 各模式详细设计

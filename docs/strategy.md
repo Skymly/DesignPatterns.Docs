@@ -45,7 +45,7 @@ await registry.Get(TextProcessorKeys.Length).ExecuteAsync("hello");
 
 ## Diagnostics
 
-DP003–DP007 — duplicate keys, contract mismatch, unregistered types, missing ctor.
+DP003–DP007 — duplicate keys, contract mismatch, unregistered types (DP006 + CodeFix), missing ctor. [DP025](./diagnostics.md#registry-key-dp025) for unknown literal keys at lookup sites. See [Registry key conventions](./registry-key-conventions.md).
 
 ## Sample
 

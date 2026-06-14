@@ -43,6 +43,9 @@ See [Diagnostics](./diagnostics.md) (DP001–DP025).
 
 Deep design notes remain in the main repo:
 
+- [docs/README.md](https://github.com/Skymly/DesignPatterns/blob/main/docs/README.md) — internal doc index
 - [docs/DEVELOPMENT.md](https://github.com/Skymly/DesignPatterns/blob/main/docs/DEVELOPMENT.md)
+- [docs/PUBLISHING.md](https://github.com/Skymly/DesignPatterns/blob/main/docs/PUBLISHING.md)
+- [docs/FactoryKeyConventions.md](https://github.com/Skymly/DesignPatterns/blob/main/docs/FactoryKeyConventions.md)
 - [docs/ROADMAP.md](https://github.com/Skymly/DesignPatterns/blob/main/docs/ROADMAP.md)
 - Per-pattern markdown under `DesignPatterns/docs/` (Chinese, maintainer-oriented)
