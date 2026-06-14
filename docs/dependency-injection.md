@@ -36,4 +36,4 @@ Set `DesignPatternsSampleKind=DependencyInjection` in sample projects for the sh
 
 ## Note on meta package
 
-The core **`DesignPatterns`** NuGet meta package does **not** include the DI extension; reference it separately when needed.
+The core **`Skymly.DesignPatterns`** NuGet meta package does **not** include the DI extension; reference `DesignPatterns.Extensions.DependencyInjection` from the main repo (sibling project) until a separate package is published.

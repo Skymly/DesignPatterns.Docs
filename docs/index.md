@@ -19,7 +19,7 @@ features:
   - title: Source generators
     details: "Attributes like [RegisterStrategy] and [HandlerOrder] emit keys, registries, and pipelines at compile time."
   - title: Diagnostics
-    details: DP001–DP024 catch duplicate keys, contract mismatches, and missing registrations before runtime.
+    details: DP001–DP025 catch duplicate keys, contract mismatches, missing registrations, and unknown registry keys before runtime.
   - title: Optional DI
     details: DesignPatterns.Extensions.DependencyInjection adds RegisterDi helpers when you use Microsoft.Extensions.DependencyInjection.
 ---
@@ -27,7 +27,7 @@ features:
 ## Status
 
 ::: warning Early preview
-Public APIs, generated code shapes, and diagnostic IDs are **not stable** yet. NuGet on [nuget.org](https://www.nuget.org) may lag behind `main`. Use a sibling clone or pin a commit until a stability announcement.
+Public APIs, generated code shapes, and diagnostic IDs are **not stable** yet. Install [`Skymly.DesignPatterns`](https://www.nuget.org/packages/Skymly.DesignPatterns) `0.1.0-preview3` from nuget.org, or use a sibling clone / pin a commit until a stability announcement.
 :::
 
 ## Where to read next

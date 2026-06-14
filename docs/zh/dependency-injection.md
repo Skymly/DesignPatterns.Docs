@@ -28,4 +28,4 @@ PaymentStrategyRegistry.RegisterDi(services);
 
 ## 说明
 
-核心元包 **`DesignPatterns`** **不包含** DI 扩展；需要时请单独引用。
+核心元包 **`Skymly.DesignPatterns`** **不包含** DI 扩展；需要时请从主仓 sibling 引用 `DesignPatterns.Extensions.DependencyInjection`（独立 NuGet 包尚未发布）。

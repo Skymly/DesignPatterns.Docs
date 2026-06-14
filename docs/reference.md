@@ -8,15 +8,19 @@
 | [DesignPatterns.Samples](https://github.com/Skymly/DesignPatterns.Samples) | Runnable console samples |
 | [DesignPatterns.Docs](https://github.com/Skymly/DesignPatterns.Docs) | This documentation site |
 
-## NuGet packages (planned)
+## NuGet packages
 
-| Package ID | Contents |
-|------------|----------|
-| `DesignPatterns` | Meta package — runtime + source generator |
-| `DesignPatterns.Extensions.DependencyInjection` | MSDI extensions + `RegisterDi` generation |
+| Package ID | Version (preview) | Contents |
+|------------|-------------------|----------|
+| [`Skymly.DesignPatterns`](https://www.nuget.org/packages/Skymly.DesignPatterns) | `0.1.0-preview3` | Meta package — runtime + source generator + analyzers + code fixes |
+| `DesignPatterns.Extensions.DependencyInjection` | — (not on NuGet yet) | MSDI extensions + `RegisterDi` generation |
 
-::: info Early preview
-Packages may not be on [nuget.org](https://www.nuget.org) yet. Use local `dotnet pack` from `DesignPatterns.Package` or sibling project references.
+```xml
+<PackageReference Include="Skymly.DesignPatterns" Version="0.1.0-preview3" />
+```
+
+::: info Deprecated GitHub-only IDs
+Do not use the old GitHub Packages ID `DesignPatterns` (`0.1.0-preview1` / `preview2`). Use **`Skymly.DesignPatterns`** on nuget.org instead.
 :::
 
 ## Solution layout (generator repo)
@@ -25,14 +29,15 @@ Packages may not be on [nuget.org](https://www.nuget.org) yet. Use local `dotnet
 |---------|------|
 | `DesignPatterns` | Runtime primitives |
 | `DesignPatterns.SourceGenerators` | Incremental generators |
-| `DesignPatterns.Analyzers` / `DesignPatterns.CodeFixes` | DP006, DP023, DP024 |
+| `DesignPatterns.Analyzers` / `DesignPatterns.CodeFixes` | DP006, DP023, DP024, DP025 |
 | `DesignPatterns.Diagnostics` | DP### ID constants |
 | `DesignPatterns.Extensions.DependencyInjection` | MSDI + DI targets |
-| `DesignPatterns.Package` | NuGet meta package |
+| `DesignPatterns.Package` | NuGet meta package (`PackageId=Skymly.DesignPatterns`) |
+| `eng/nuget-smoke/MetaPackage.Consumer` | End-to-end NuGet consumer smoke test |
 
 ## Diagnostics
 
-See [Diagnostics](./diagnostics.md) (DP001–DP024).
+See [Diagnostics](./diagnostics.md) (DP001–DP025).
 
 ## Contributor docs
 

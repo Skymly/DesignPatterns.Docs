@@ -5,15 +5,31 @@
 - [.NET SDK 8](https://dotnet.microsoft.com/download)
 - Git
 
-## 克隆布局
+## 从 NuGet 安装（预览）
 
-建议 sibling 并列放置：
+元包在 [nuget.org](https://www.nuget.org/packages/Skymly.DesignPatterns) 上的 ID 为 **`Skymly.DesignPatterns`**。C# 命名空间仍为 `DesignPatterns.*`。
+
+```xml
+<PackageReference Include="Skymly.DesignPatterns" Version="0.1.0-preview3" />
+```
+
+::: warning 早期预览
+公共 API、生成代码与 `DP###` 诊断**尚未稳定**。在稳定公告前请固定包版本或 Git commit。
+:::
+
+**可选 DI：** 元包**不包含** `DesignPatterns.Extensions.DependencyInjection` — 在独立 DI 包发布前请从主仓 sibling 引用。见 [依赖注入](./dependency-injection.md)。
+
+## 克隆布局（贡献者）
+
+建议并列放置于 **DesignPatterns** 项目目录下：
 
 ```
-Skymly/
-  DesignPatterns/
-  DesignPatterns.Samples/
-  DesignPatterns.Docs/    ← 本站
+<workspace-root>/
+  Skymly/
+    DesignPatterns/
+      DesignPatterns/
+      DesignPatterns.Samples/
+      DesignPatterns.Docs/    ← 本站
 ```
 
 ```powershell
@@ -30,7 +46,7 @@ cd DesignPatterns
 
 ## 第一个模式：Strategy
 
-在实现类与 partial 注册表持有者上标记特性：
+引用 **`Skymly.DesignPatterns`**（NuGet）或本地 pack / 项目引用。在实现类与 partial 注册表持有者上标记特性：
 
 ```csharp
 [RegisterStrategy(typeof(IPaymentStrategy), "alipay")]
@@ -46,12 +62,6 @@ var alipay = PaymentStrategyRegistry.Instance.Get(PaymentStrategyKeys.Alipay);
 ```
 
 详见 [Strategy](./strategy.md) 与示例仓库。
-
-## NuGet（发布后）
-
-元包 **`DesignPatterns`** 包含运行时 + 源生成器；**`DesignPatterns.Extensions.DependencyInjection`** 为独立 DI 扩展包。
-
-正式发布前可使用 sibling `ProjectReference` 或本地 `dotnet pack`。
 
 ## 本地预览文档
 

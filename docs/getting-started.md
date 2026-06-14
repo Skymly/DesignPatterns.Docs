@@ -5,15 +5,31 @@
 - [.NET SDK 8](https://dotnet.microsoft.com/download) — libraries and samples target `net8.0` (runtime also supports `netstandard2.0`)
 - Git
 
-## Clone layout
+## Install from NuGet (preview)
 
-Place repositories as siblings under your workspace (same layout as [Observables](https://github.com/Skymly/Observables)):
+The meta package is published as **`Skymly.DesignPatterns`** on [nuget.org](https://www.nuget.org/packages/Skymly.DesignPatterns). C# namespaces remain `DesignPatterns.*`.
+
+```xml
+<PackageReference Include="Skymly.DesignPatterns" Version="0.1.0-preview3" />
+```
+
+::: warning Early preview
+Public APIs, generated code, and `DP###` diagnostics are **not stable** yet. Pin the package version or a Git commit until a stability announcement.
+:::
+
+**Optional DI:** `DesignPatterns.Extensions.DependencyInjection` is **not** included in the meta package — use a sibling project reference from the main repo until a separate package is published. See [Dependency injection](./dependency-injection.md).
+
+## Clone layout (contributors)
+
+Place repositories as siblings under the **DesignPatterns** project folder:
 
 ```
-Skymly/
-  DesignPatterns/
-  DesignPatterns.Samples/
-  DesignPatterns.Docs/    ← this site
+<workspace-root>/
+  Skymly/
+    DesignPatterns/
+      DesignPatterns/
+      DesignPatterns.Samples/
+      DesignPatterns.Docs/    ← this site
 ```
 
 ```powershell
@@ -28,11 +44,11 @@ cd DesignPatterns
 ./build.ps1 --target Ci --configuration Release
 ```
 
-This runs unit tests, generator Verify snapshots, analyzer tests, and in-repo samples.
+This runs unit tests, generator Verify snapshots, analyzer tests, and sibling Samples in CI.
 
 ## First pattern: Strategy
 
-Add a project reference to the **DesignPatterns** meta package (local pack or future NuGet). Mark implementations and a partial registry holder:
+Reference **`Skymly.DesignPatterns`** (NuGet) or a local pack / project reference. Mark implementations and a partial registry holder:
 
 ```csharp
 public interface IPaymentStrategy
@@ -59,12 +75,6 @@ var alipay = PaymentStrategyRegistry.Instance.Get(PaymentStrategyKeys.Alipay);
 ```
 
 See [Strategy](./strategy.md) and [DesignPatterns.Samples.Strategy](https://github.com/Skymly/DesignPatterns.Samples/tree/main/DesignPatterns.Samples.Strategy).
-
-## NuGet (when published)
-
-The meta package **`DesignPatterns`** bundles runtime + source generator. **`DesignPatterns.Extensions.DependencyInjection`** is a separate package for MSDI integration.
-
-Until packages appear on nuget.org, use sibling `ProjectReference` or local `dotnet pack` output from `DesignPatterns.Package`.
 
 ## Documentation site
 
