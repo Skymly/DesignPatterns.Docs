@@ -73,6 +73,19 @@ Help links in the IDE point to this page (`#dp###` anchors).
 
 See also [Registry key conventions](./registry-key-conventions.md).
 
+## State transition table (DP026–DP031) {#state-transition-table-dp026-dp031}
+
+| ID | Severity | When |
+|----|----------|------|
+| **DP026** | Error | Duplicate `(from state, trigger)` edge |
+| **DP027** | Error | `[Transition]` state value is not a declared enum member |
+| **DP028** | Error | `[Transition]` trigger value is not a declared enum member |
+| **DP029** | Error | `[StateMachine]` `Initial` is not a declared state enum member |
+| **DP030** | Error | Holder class is not `static partial` |
+| **DP031** | Info | State enum member never appears as a `[Transition]` source (terminal/reserved hint) |
+
+See [State transition table](./state-transition-table.md).
+
 ## Code fixes
 
 `DesignPatterns.CodeFixes` ships inside the **`Skymly.DesignPatterns`** meta package (`analyzers/dotnet/cs`). Selected diagnostics offer one-click fixes in the IDE (requires C# Workspaces):

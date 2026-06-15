@@ -42,7 +42,7 @@ DP003–DP007；字面量 key 见 [DP025](./diagnostics.md#注册表-key-dp025)�
 
 ## 示例
 
-[DesignPatterns.Samples.Strategy](https://github.com/Skymly/DesignPatterns.Samples/tree/main/DesignPatterns.Samples.Strategy)
+[DesignPatterns.Samples.Strategy](https://github.com/Skymly/DesignPatterns.Samples/tree/main/DesignPatterns.Samples.Strategy) — 同步支付策略与异步 `IRefundProcessor`（`ExecuteAsync`，见 `RefundProcessors.cs`）。
 
 ## DI
 
