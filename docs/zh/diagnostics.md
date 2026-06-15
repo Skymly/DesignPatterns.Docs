@@ -72,6 +72,19 @@ IDE 帮助链接指向本页（`#dp###` 锚点）。
 
 另见 [注册表 Key 命名约定](./registry-key-conventions.md)。
 
+## State 转换表（DP026–DP031） {#state-转换表-dp026-dp031}
+
+| ID | 级别 | 触发条件 |
+|----|------|----------|
+| **DP026** | Error | `(from state, trigger)` 边重复 |
+| **DP027** | Error | `[Transition]` 的 state 非 enum 成员 |
+| **DP028** | Error | trigger 非 enum 成员 |
+| **DP029** | Error | `[StateMachine]` 的 `Initial` 非 state enum 成员 |
+| **DP030** | Error | holder 不是 `static partial` class |
+| **DP031** | Info | state enum 成员从未作为 `[Transition]` 的 from（终态提示） |
+
+见 [State 转换表](./state-transition-table.md)。
+
 ## CodeFix
 
 `DesignPatterns.CodeFixes` 随 **`Skymly.DesignPatterns`** 元包分发（`analyzers/dotnet/cs`）。下列诊断支持 IDE 一键修复（需 C# Workspaces）：

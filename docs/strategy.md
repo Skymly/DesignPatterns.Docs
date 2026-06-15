@@ -49,7 +49,7 @@ DP003–DP007 — duplicate keys, contract mismatch, unregistered types (DP006 +
 
 ## Sample
 
-[DesignPatterns.Samples.Strategy](https://github.com/Skymly/DesignPatterns.Samples/tree/main/DesignPatterns.Samples.Strategy)
+[DesignPatterns.Samples.Strategy](https://github.com/Skymly/DesignPatterns.Samples/tree/main/DesignPatterns.Samples.Strategy) — sync payment strategies plus async `IRefundProcessor` with `ExecuteAsync` (`RefundProcessors.cs`).
 
 ## DI
 

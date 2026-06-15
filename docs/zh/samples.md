@@ -36,6 +36,7 @@ dotnet run --project DesignPatterns.Samples.Strategy -c Release
 | **DesignPatterns.Samples.EventAggregator** | 事件聚合器 |
 | **DesignPatterns.Samples.GenerateSingleton** | `[GenerateSingleton]` |
 | **DesignPatterns.Samples.DependencyInjection** | Strategy / Factory / Handler 的 `RegisterDi` |
+| **DesignPatterns.Samples.State** | 手动 `TransitionTableBuilder` + `[StateMachine]` 订单生命周期 |
 
 ## NuGet 消费
 

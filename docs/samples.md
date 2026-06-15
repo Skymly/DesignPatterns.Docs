@@ -36,6 +36,7 @@ The main [DesignPatterns](https://github.com/Skymly/DesignPatterns) CI checks ou
 | **DesignPatterns.Samples.EventAggregator** | `IEventAggregator` pub/sub |
 | **DesignPatterns.Samples.GenerateSingleton** | `[GenerateSingleton]` |
 | **DesignPatterns.Samples.DependencyInjection** | `RegisterDi` for Strategy / Factory / Handler |
+| **DesignPatterns.Samples.State** | Manual `TransitionTableBuilder` + `[StateMachine]` order lifecycle |
 
 ## NuGet consumption
 
