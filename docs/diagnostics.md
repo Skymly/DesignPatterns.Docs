@@ -73,6 +73,20 @@ Help links in the IDE point to this page (`#dp###` anchors).
 
 See also [Registry key conventions](./registry-key-conventions.md).
 
+## Plugin assemblies (DP033) {#dp033}
+
+| ID | Severity | When |
+|----|----------|------|
+| **DP033** | Error | The same **strategy key** for the same contract is registered in **more than one referenced provider assembly** |
+
+**Where it applies:** host (or any) compilations that reference multiple plugin provider assemblies contributing `[RegisterStrategy]` / `[RegisterStrategy<TContract>]` for the same contract with an identical key string.
+
+**Message:** includes the key, contract type, and conflicting assembly names.
+
+**Fix:** use distinct keys per provider assembly, or reference only one provider per contract dimension. Duplicate keys within a **single** assembly remain **DP003** (generator).
+
+See [Plugin assemblies sample](https://github.com/Skymly/DesignPatterns.Samples/tree/main/DesignPatterns.Samples.PluginAssemblies) and the main repo [PluginAssemblies.md](https://github.com/Skymly/DesignPatterns/blob/main/docs/PluginAssemblies.md).
+
 ## State transition table (DP026–DP031) {#state-transition-table-dp026-dp031}
 
 | ID | Severity | When |
