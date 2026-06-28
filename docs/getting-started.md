@@ -10,7 +10,7 @@
 The meta package is published as **`Skymly.DesignPatterns`** on [nuget.org](https://www.nuget.org/packages/Skymly.DesignPatterns). C# namespaces remain `DesignPatterns.*`.
 
 ```xml
-<PackageReference Include="Skymly.DesignPatterns" Version="0.2.0-preview2" />
+<PackageReference Include="Skymly.DesignPatterns" Version="0.2.0-preview3" />
 ```
 
 ::: warning Early preview

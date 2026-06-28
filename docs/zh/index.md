@@ -27,7 +27,7 @@ features:
 ## 项目状态
 
 ::: warning 早期预览
-公共 API、生成代码形态与诊断 ID **尚未稳定**。请从 nuget.org 安装 [`Skymly.DesignPatterns`](https://www.nuget.org/packages/Skymly.DesignPatterns) `0.2.0-preview2`，或使用 sibling 克隆 / 固定 commit，直至稳定公告。
+公共 API、生成代码形态与诊断 ID **尚未稳定**。请从 nuget.org 安装 [`Skymly.DesignPatterns`](https://www.nuget.org/packages/Skymly.DesignPatterns) `0.2.0-preview3`，或使用 sibling 克隆 / 固定 commit，直至稳定公告。
 :::
 
 ## 下一步
