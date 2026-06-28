@@ -100,6 +100,74 @@ See [Plugin assemblies sample](https://github.com/Skymly/DesignPatterns.Samples/
 
 See [State transition table](./state-transition-table.md).
 
+## State guard (DP032, DP034–DP035) {#dp032}
+
+| ID | Severity | When |
+|----|----------|------|
+| **DP032** | Error | `[Transition(Guard = nameof(Method))]` guard method not found on holder class |
+| **DP034** | Error | Guard method is not `static` (defensive — C# compiler rejects instance methods on static classes first) |
+| **DP035** | Error | Guard method has wrong signature (must be `static bool Method(TState, TTrigger)`) |
+
+## State literal edge (DP036) {#dp036}
+
+| ID | Severity | When |
+|----|----------|------|
+| **DP036** | Info | `TryTransition` called with literal `(state, trigger)` arguments that do not match any declared `[Transition]` edge |
+
+## State entry/exit actions (DP037–DP039) {#dp037}
+
+| ID | Severity | When |
+|----|----------|------|
+| **DP037** | Error | `[Transition(OnEnter/OnExit = nameof(Method))]` action method not found on holder class |
+| **DP038** | Error | Action method is not `static` (unreachable in practice — CS0708 fires first; retained for completeness) |
+| **DP039** | Error | Action method has wrong signature (must be `static void Method(TState, TState, TTrigger)` or `static ValueTask Method(TState, TState, TTrigger, CancellationToken)`) |
+
+## Composite DI + Visitor (DP040–DP041) {#dp040}
+
+| ID | Severity | When |
+|----|----------|------|
+| **DP040** | Error | `BuildRoot(IServiceProvider)` called but a composite node is not registered in the container |
+| **DP041** | Error | Generated `I{Contract}NodeVisitor` does not cover all node types (visitor missing a `Visit` overload) |
+
+## Decorator DI + async (DP042–DP043) {#dp042}
+
+| ID | Severity | When |
+|----|----------|------|
+| **DP042** | Error | Async decorator method signature is incorrect (`DecorateAsync` must return `ValueTask<TService>`) |
+| **DP043** | Error | Async decorator cannot be resolved from DI when using `Build(IServiceProvider, core)` |
+
+## EventAggregator (DP044–DP046) {#dp044}
+
+| ID | Severity | When |
+|----|----------|------|
+| **DP044** | Info | Type implements `IEventHandler<T>` but is not marked with `[RegisterEventHandler]` |
+| **DP045** | Error | Duplicate `[RegisterEventHandler]` on the same handler for the same event type |
+| **DP046** | Error | Type marked with `[RegisterEventHandler<T>]` but does not implement `IEventHandler<T>` |
+
+## Strategy guard (DP047–DP049) {#dp047}
+
+| ID | Severity | When |
+|----|----------|------|
+| **DP047** | Error | `[RegisterStrategy(Guard = nameof(Method))]` guard method not found on strategy class |
+| **DP048** | Error | Guard method is not `static` |
+| **DP049** | Error | Guard method has wrong signature (must be `static bool Method(TKey)`) |
+
+## Handler guard (DP050–DP052) {#dp050}
+
+| ID | Severity | When |
+|----|----------|------|
+| **DP050** | Error | `[HandlerOrder(Guard = nameof(Method))]` guard method not found on handler class |
+| **DP051** | Error | Guard method is not `static` |
+| **DP052** | Error | Guard method has wrong signature (must be `static bool Method(TContext)`) |
+
+## Factory async + pooling (DP053–DP055) {#dp053}
+
+| ID | Severity | When |
+|----|----------|------|
+| **DP053** | Error | `[RegisterFactory(IsAsync = true)]` but factory does not implement `IAsyncFactory<T>` |
+| **DP054** | Error | `PoolSize` is negative (must be ≥ 0; 0 disables pooling) |
+| **DP055** | Warning | `PoolSize` > 1024 (may cause excessive memory usage) |
+
 ## Code fixes
 
 `DesignPatterns.CodeFixes` ships inside the **`Skymly.DesignPatterns`** meta package (`analyzers/dotnet/cs`). Selected diagnostics offer one-click fixes in the IDE (requires C# Workspaces):

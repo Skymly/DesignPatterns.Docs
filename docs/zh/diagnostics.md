@@ -97,6 +97,74 @@ IDE 帮助链接指向本页（`#dp###` 锚点）。
 
 见 [State 转换表](./state-transition-table.md)。
 
+## State guard（DP032、DP034–DP035） {#dp032}
+
+| ID | 级别 | 触发条件 |
+|----|------|----------|
+| **DP032** | Error | `[Transition(Guard = nameof(Method))]` guard 方法在 holder 类上未找到 |
+| **DP034** | Error | guard 方法非 `static`（防御性 — C# 编译器先于生成器拒绝 static 类的实例方法） |
+| **DP035** | Error | guard 方法签名错误（须为 `static bool Method(TState, TTrigger)`） |
+
+## State 字面量边（DP036） {#dp036}
+
+| ID | 级别 | 触发条件 |
+|----|------|----------|
+| **DP036** | Info | `TryTransition` 以字面量 `(state, trigger)` 调用，但未匹配任何 `[Transition]` 声明的边 |
+
+## State entry/exit action（DP037–DP039） {#dp037}
+
+| ID | 级别 | 触发条件 |
+|----|------|----------|
+| **DP037** | Error | `[Transition(OnEnter/OnExit = nameof(Method))]` action 方法在 holder 类上未找到 |
+| **DP038** | Error | action 方法非 `static`（实际不可达 — CS0708 先触发；保留供完整性） |
+| **DP039** | Error | action 方法签名错误（须为 `static void Method(TState, TState, TTrigger)` 或 `static ValueTask Method(TState, TState, TTrigger, CancellationToken)`） |
+
+## Composite DI + Visitor（DP040–DP041） {#dp040}
+
+| ID | 级别 | 触发条件 |
+|----|------|----------|
+| **DP040** | Error | `BuildRoot(IServiceProvider)` 调用时 composite 节点未注册到容器 |
+| **DP041** | Error | 生成的 `I{Contract}NodeVisitor` 未覆盖所有节点类型（visitor 缺少 `Visit` 重载） |
+
+## Decorator DI + async（DP042–DP043） {#dp042}
+
+| ID | 级别 | 触发条件 |
+|----|------|----------|
+| **DP042** | Error | async decorator 方法签名错误（`DecorateAsync` 须返回 `ValueTask<TService>`） |
+| **DP043** | Error | async decorator 在 `Build(IServiceProvider, core)` 时无法从 DI 解析 |
+
+## EventAggregator（DP044–DP046） {#dp044}
+
+| ID | 级别 | 触发条件 |
+|----|------|----------|
+| **DP044** | Info | 类型实现 `IEventHandler<T>` 但未标注 `[RegisterEventHandler]` |
+| **DP045** | Error | 同一 handler 对同一 event type 重复标注 `[RegisterEventHandler]` |
+| **DP046** | Error | 类型标注了 `[RegisterEventHandler<T>]` 但未实现 `IEventHandler<T>` |
+
+## Strategy guard（DP047–DP049） {#dp047}
+
+| ID | 级别 | 触发条件 |
+|----|------|----------|
+| **DP047** | Error | `[RegisterStrategy(Guard = nameof(Method))]` guard 方法在策略类上未找到 |
+| **DP048** | Error | guard 方法非 `static` |
+| **DP049** | Error | guard 方法签名错误（须为 `static bool Method(TKey)`） |
+
+## Handler guard（DP050–DP052） {#dp050}
+
+| ID | 级别 | 触发条件 |
+|----|------|----------|
+| **DP050** | Error | `[HandlerOrder(Guard = nameof(Method))]` guard 方法在 handler 类上未找到 |
+| **DP051** | Error | guard 方法非 `static` |
+| **DP052** | Error | guard 方法签名错误（须为 `static bool Method(TContext)`） |
+
+## Factory async + 池化（DP053–DP055） {#dp053}
+
+| ID | 级别 | 触发条件 |
+|----|------|----------|
+| **DP053** | Error | `[RegisterFactory(IsAsync = true)]` 但工厂未实现 `IAsyncFactory<T>` |
+| **DP054** | Error | `PoolSize` 为负数（须 ≥ 0；0 禁用池化） |
+| **DP055** | Warning | `PoolSize` > 1024（可能导致内存占用过高） |
+
 ## CodeFix
 
 `DesignPatterns.CodeFixes` 随 **`Skymly.DesignPatterns`** 元包分发（`analyzers/dotnet/cs`）。下列诊断支持 IDE 一键修复（需 C# Workspaces）：

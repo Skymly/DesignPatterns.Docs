@@ -12,11 +12,12 @@
 
 | 包 ID | 预览版本 | 内容 |
 |-------|----------|------|
-| [`Skymly.DesignPatterns`](https://www.nuget.org/packages/Skymly.DesignPatterns) | `0.1.0-preview3` | 元包 — 运行时 + 源生成器 + Analyzer + CodeFix |
+| [`Skymly.DesignPatterns`](https://www.nuget.org/packages/Skymly.DesignPatterns) | `0.2.0-preview2` | 元包 — 运行时 + 源生成器 + Analyzer + CodeFix |
 | `DesignPatterns.Extensions.DependencyInjection` | —（尚未发 NuGet） | MSDI + `RegisterDi` 生成 |
+| `DesignPatterns.Extensions.Autofac` | —（尚未发 NuGet） | Autofac + `RegisterAutofac` 生成 |
 
 ```xml
-<PackageReference Include="Skymly.DesignPatterns" Version="0.1.0-preview3" />
+<PackageReference Include="Skymly.DesignPatterns" Version="0.2.0-preview2" />
 ```
 
 ::: info 已弃用的 GitHub 包 ID
@@ -25,7 +26,7 @@
 
 ## 诊断
 
-见 [诊断](./diagnostics.md)（DP001–DP025）。
+见 [诊断](./diagnostics.md)（DP001–DP055）。
 
 ## 维护者文档
 

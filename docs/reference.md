@@ -12,11 +12,12 @@
 
 | Package ID | Version (preview) | Contents |
 |------------|-------------------|----------|
-| [`Skymly.DesignPatterns`](https://www.nuget.org/packages/Skymly.DesignPatterns) | `0.1.0-preview3` | Meta package — runtime + source generator + analyzers + code fixes |
+| [`Skymly.DesignPatterns`](https://www.nuget.org/packages/Skymly.DesignPatterns) | `0.2.0-preview2` | Meta package — runtime + source generator + analyzers + code fixes |
 | `DesignPatterns.Extensions.DependencyInjection` | — (not on NuGet yet) | MSDI extensions + `RegisterDi` generation |
+| `DesignPatterns.Extensions.Autofac` | — (not on NuGet yet) | Autofac extensions + `RegisterAutofac` generation |
 
 ```xml
-<PackageReference Include="Skymly.DesignPatterns" Version="0.1.0-preview3" />
+<PackageReference Include="Skymly.DesignPatterns" Version="0.2.0-preview2" />
 ```
 
 ::: info Deprecated GitHub-only IDs
@@ -29,7 +30,7 @@ Do not use the old GitHub Packages ID `DesignPatterns` (`0.1.0-preview1` / `prev
 |---------|------|
 | `DesignPatterns` | Runtime primitives |
 | `DesignPatterns.SourceGenerators` | Incremental generators |
-| `DesignPatterns.Analyzers` / `DesignPatterns.CodeFixes` | DP006, DP023, DP024, DP025 |
+| `DesignPatterns.Analyzers` / `DesignPatterns.CodeFixes` | DP006, DP023, DP024, DP025, DP033, DP036, DP044 |
 | `DesignPatterns.Diagnostics` | DP### ID constants |
 | `DesignPatterns.Extensions.DependencyInjection` | MSDI + DI targets |
 | `DesignPatterns.Package` | NuGet meta package (`PackageId=Skymly.DesignPatterns`) |
@@ -37,7 +38,7 @@ Do not use the old GitHub Packages ID `DesignPatterns` (`0.1.0-preview1` / `prev
 
 ## Diagnostics
 
-See [Diagnostics](./diagnostics.md) (DP001–DP025).
+See [Diagnostics](./diagnostics.md) (DP001–DP055).
 
 ## Contributor docs
 
