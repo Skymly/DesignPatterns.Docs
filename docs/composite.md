@@ -43,7 +43,41 @@ Multi-root catalogs: `BuildRoot()` throws `CompositeAssemblyException` at runtim
 
 ## Diagnostics
 
-DP010–DP015.
+DP010–DP015. DP040 for unregistered DI nodes. DP041 for visitor coverage.
+
+## DI integration
+
+When the `DesignPatterns.Extensions.DependencyInjection` package is referenced, the source generator emits a `RegisterDi(IServiceCollection, ServiceLifetime)` method for each contract. This registers all composite parts with the DI container and enables `BuildRoot(IServiceProvider)` to resolve nodes from the container.
+
+```csharp
+MenuNodeCompositeCatalog.RegisterDi(services);
+
+var provider = services.BuildServiceProvider();
+var root = MenuNodeCompositeCatalog.BuildRoot(provider);
+```
+
+Parts must be registered in the container before calling `BuildRoot(IServiceProvider)`. If a part is not registered, the generator reports **DP040** at compile time.
+
+## Visitor generation
+
+The source generator can optionally emit a visitor interface and `AcceptVisitor` extension methods for traversing composite trees with type-safe double dispatch.
+
+For a contract `IMenuNode`, the generator emits:
+
+- `IMenuNodeVisitor` — visitor interface with `Visit` methods for each concrete node type
+- `AcceptVisitor<TVisitor>(this IMenuNode, TVisitor)` extension methods
+
+```csharp
+public class MenuPrinter : IMenuNodeVisitor
+{
+    public void Visit(HomeMenu node) => Console.WriteLine($"Home: {node.Title}");
+    public void Visit(SettingsMenu node) => Console.WriteLine($"Settings: {node.Title}");
+}
+
+root.AcceptVisitor(new MenuPrinter());
+```
+
+If a node type is added but the visitor interface is not updated, the generator reports **DP041**.
 
 ## Sample
 
