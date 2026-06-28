@@ -10,7 +10,7 @@
 元包在 [nuget.org](https://www.nuget.org/packages/Skymly.DesignPatterns) 上的 ID 为 **`Skymly.DesignPatterns`**。C# 命名空间仍为 `DesignPatterns.*`。
 
 ```xml
-<PackageReference Include="Skymly.DesignPatterns" Version="0.2.0-preview2" />
+<PackageReference Include="Skymly.DesignPatterns" Version="0.2.0-preview3" />
 ```
 
 ::: warning 早期预览
