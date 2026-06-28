@@ -124,7 +124,7 @@ IDE 帮助链接指向本页（`#dp###` 锚点）。
 | ID | 级别 | 触发条件 |
 |----|------|----------|
 | **DP040** | Error | `BuildRoot(IServiceProvider)` 调用时 composite 节点未注册到容器 |
-| **DP041** | Error | 生成的 `I{Contract}NodeVisitor` 未覆盖所有节点类型（visitor 缺少 `Visit` 重载） |
+| **DP041** | Info | 生成的 `I{Contract}NodeVisitor` 未覆盖所有节点类型（保留 ID — C# 编译器通过接口实现 CS0535 自动强制覆盖，诊断不实际触发） |
 
 ## Decorator DI + async（DP042–DP043） {#dp042}
 

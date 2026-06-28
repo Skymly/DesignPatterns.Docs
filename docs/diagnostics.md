@@ -127,7 +127,7 @@ See [State transition table](./state-transition-table.md).
 | ID | Severity | When |
 |----|----------|------|
 | **DP040** | Error | `BuildRoot(IServiceProvider)` called but a composite node is not registered in the container |
-| **DP041** | Error | Generated `I{Contract}NodeVisitor` does not cover all node types (visitor missing a `Visit` overload) |
+| **DP041** | Info | Generated `I{Contract}NodeVisitor` does not cover all node types (reserved — the C# compiler enforces full coverage via CS0535 when implementing the generated interface) |
 
 ## Decorator DI + async (DP042–DP043) {#dp042}
 
