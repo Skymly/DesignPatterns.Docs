@@ -10,13 +10,13 @@
 The meta package is published as **`Skymly.DesignPatterns`** on [nuget.org](https://www.nuget.org/packages/Skymly.DesignPatterns). C# namespaces remain `DesignPatterns.*`.
 
 ```xml
-<PackageReference Include="Skymly.DesignPatterns" Version="0.2.2" />
+<PackageReference Include="Skymly.DesignPatterns" Version="0.2.3-preview1" />
 ```
 
 Or from the command line:
 
 ```powershell
-dotnet add package Skymly.DesignPatterns --version 0.2.2
+dotnet add package Skymly.DesignPatterns --version 0.2.3-preview1
 ```
 
 ::: warning Early preview
@@ -26,9 +26,9 @@ Public APIs, generated code, and `DP###` diagnostics are **not stable** yet. Pin
 **Optional DI:** the DI integrations are separate packages and are not included in the meta package:
 
 ```powershell
-dotnet add package Skymly.DesignPatterns.Extensions.DependencyInjection --version 0.2.2
+dotnet add package Skymly.DesignPatterns.Extensions.DependencyInjection --version 0.2.3-preview1
 # Or, when using Autofac:
-dotnet add package Skymly.DesignPatterns.Extensions.Autofac --version 0.2.2
+dotnet add package Skymly.DesignPatterns.Extensions.Autofac --version 0.2.3-preview1
 ```
 
 See [Dependency injection](./dependency-injection.md).

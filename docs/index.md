@@ -27,7 +27,7 @@ features:
 ## Status
 
 ::: warning Early preview
-Public APIs, generated code shapes, and diagnostic IDs are **not stable** yet. Install [`Skymly.DesignPatterns`](https://www.nuget.org/packages/Skymly.DesignPatterns) `0.2.2` from nuget.org, or use a sibling clone / pin a commit until a stability announcement.
+Public APIs, generated code shapes, and diagnostic IDs are **not stable** yet. Install [`Skymly.DesignPatterns`](https://www.nuget.org/packages/Skymly.DesignPatterns) `0.2.3-preview1` from nuget.org, or use a sibling clone / pin a commit until a stability announcement.
 :::
 
 ## Where to read next
