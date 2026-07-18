@@ -40,7 +40,7 @@ dotnet run --project DesignPatterns.Samples.Strategy -c Release
 
 ## NuGet 消费
 
-**`Skymly.DesignPatterns`** 已发布至 [nuget.org](https://www.nuget.org/packages/Skymly.DesignPatterns)（预览）。在示例仓关闭 sibling 项目引用：
+**`Skymly.DesignPatterns` `0.2.2`** 已发布至 [nuget.org](https://www.nuget.org/packages/Skymly.DesignPatterns)（早期预览）。在示例仓关闭 sibling 项目引用：
 
 ```powershell
 dotnet run --project DesignPatterns.Samples.Strategy -c Release -p:UseLocalDesignPatterns=false

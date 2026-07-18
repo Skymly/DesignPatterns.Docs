@@ -10,14 +10,14 @@
 
 ## NuGet packages
 
-| Package ID | Version (preview) | Contents |
+| Package ID | Version | Contents |
 |------------|-------------------|----------|
-| [`Skymly.DesignPatterns`](https://www.nuget.org/packages/Skymly.DesignPatterns) | `0.2.0-preview3` | Meta package — runtime + source generator + analyzers + code fixes |
-| `DesignPatterns.Extensions.DependencyInjection` | — (not on NuGet yet) | MSDI extensions + `RegisterDi` generation |
-| `DesignPatterns.Extensions.Autofac` | — (not on NuGet yet) | Autofac extensions + `RegisterAutofac` generation |
+| [`Skymly.DesignPatterns`](https://www.nuget.org/packages/Skymly.DesignPatterns) | `0.2.2` | Meta package — runtime + source generator + analyzers + code fixes |
+| [`Skymly.DesignPatterns.Extensions.DependencyInjection`](https://www.nuget.org/packages/Skymly.DesignPatterns.Extensions.DependencyInjection) | `0.2.2` | MSDI extensions + `RegisterDi` generation |
+| [`Skymly.DesignPatterns.Extensions.Autofac`](https://www.nuget.org/packages/Skymly.DesignPatterns.Extensions.Autofac) | `0.2.2` | Autofac extensions + `RegisterAutofac` generation |
 
 ```xml
-<PackageReference Include="Skymly.DesignPatterns" Version="0.2.0-preview3" />
+<PackageReference Include="Skymly.DesignPatterns" Version="0.2.2" />
 ```
 
 ::: info Deprecated GitHub-only IDs
@@ -38,7 +38,7 @@ Do not use the old GitHub Packages ID `DesignPatterns` (`0.1.0-preview1` / `prev
 
 ## Diagnostics
 
-See [Diagnostics](./diagnostics.md) (DP001–DP055).
+See [Diagnostics](./diagnostics.md) (DP001–DP071).
 
 ## Contributor docs
 

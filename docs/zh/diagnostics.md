@@ -165,6 +165,42 @@ IDE 帮助链接指向本页（`#dp###` 锚点）。
 | **DP054** | Error | `PoolSize` 为负数（须 ≥ 0；0 禁用池化） |
 | **DP055** | Warning | `PoolSize` > 1024（可能导致内存占用过高） |
 
+## State 层级（DP056–DP059） {#state-hierarchy-dp056-dp059}
+
+| ID | 级别 | 触发条件 |
+|----|------|----------|
+| **DP056** | Error | State 层级存在环 |
+| **DP057** | Error | `[StateParent]` 引用了 state enum 中不存在的成员 |
+| **DP058** | Error | `[StateParent]` 将 state 声明为自身的 parent |
+| **DP059** | Info | 声明为 parent 的 state 没有子状态或出边 |
+
+## DI 生命周期（DP060–DP062） {#di-lifetime-dp060-dp062}
+
+| ID | 级别 | 触发条件 |
+|----|------|----------|
+| **DP060** | Warning | 生成注册表的生命周期长于实现类型，可能捕获短生命周期服务 |
+| **DP061** | Info | 实现类型的生命周期长于注册表，可能产生不必要的实例 |
+| **DP062** | Warning | Singleton 服务依赖 Scoped 或 Transient 服务 |
+
+## Composite 树约束（DP063–DP065） {#composite-schema-dp063-dp065}
+
+| ID | 级别 | 触发条件 |
+|----|------|----------|
+| **DP063** | Warning | Composite 树超过 `[CompositeSchema]` 声明的 `MaxDepth` |
+| **DP064** | Error | Composite 子类型未列入父节点的 `AllowedChildTypes` |
+| **DP065** | Warning | Composite 契约的节点数超过 `[CompositeSchema]` 声明的 `MaxNodes` |
+
+## Singleton 生命周期（DP066–DP071） {#singleton-lifecycle-dp066-dp071}
+
+| ID | 级别 | 触发条件 |
+|----|------|----------|
+| **DP066** | Warning | Singleton 工厂委托解析 Scoped 或 Transient 服务并将其捕获 |
+| **DP067** | Error | `GenerateSingleton` 异步初始化器缺失、非静态或 `Task`/`ValueTask` 签名错误 |
+| **DP068** | Warning | 生成的 Singleton 同时注册为 DI Singleton，形成两个生命周期所有者 |
+| **DP069** | Info | 非线程安全的生成 Singleton 包含可变实例状态 |
+| **DP070** | Info | 检测到可变静态 Singleton 状态，建议使用不可变 `Lazy` Singleton 或 DI |
+| **DP071** | Warning | 可变静态 Singleton 状态同时注册为 DI Singleton |
+
 ## CodeFix
 
 `DesignPatterns.CodeFixes` 随 **`Skymly.DesignPatterns`** 元包分发（`analyzers/dotnet/cs`）。下列诊断支持 IDE 一键修复（需 C# Workspaces）：

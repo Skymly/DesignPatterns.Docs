@@ -168,6 +168,42 @@ See [State transition table](./state-transition-table.md).
 | **DP054** | Error | `PoolSize` is negative (must be ≥ 0; 0 disables pooling) |
 | **DP055** | Warning | `PoolSize` > 1024 (may cause excessive memory usage) |
 
+## State hierarchy (DP056–DP059) {#state-hierarchy-dp056-dp059}
+
+| ID | Severity | When |
+|----|----------|------|
+| **DP056** | Error | A state hierarchy contains a cycle |
+| **DP057** | Error | `[StateParent]` references a state that is not a member of the state enum |
+| **DP058** | Error | `[StateParent]` declares a state as its own parent |
+| **DP059** | Info | A declared parent state has no children and no outgoing transitions |
+
+## DI lifetime (DP060–DP062) {#di-lifetime-dp060-dp062}
+
+| ID | Severity | When |
+|----|----------|------|
+| **DP060** | Warning | A generated registry lifetime exceeds the implementation lifetime and may capture a shorter-lived service |
+| **DP061** | Info | An implementation lifetime exceeds the registry lifetime and may cause unnecessary instances |
+| **DP062** | Warning | A Singleton service depends on a Scoped or Transient service |
+
+## Composite tree schema (DP063–DP065) {#composite-schema-dp063-dp065}
+
+| ID | Severity | When |
+|----|----------|------|
+| **DP063** | Warning | A Composite tree exceeds the `MaxDepth` declared by `[CompositeSchema]` |
+| **DP064** | Error | A Composite child type is not listed in the parent’s `AllowedChildTypes` |
+| **DP065** | Warning | A Composite contract exceeds the `MaxNodes` declared by `[CompositeSchema]` |
+
+## Singleton lifecycle (DP066–DP071) {#singleton-lifecycle-dp066-dp071}
+
+| ID | Severity | When |
+|----|----------|------|
+| **DP066** | Warning | A Singleton factory delegate resolves a Scoped or Transient service and captures it |
+| **DP067** | Error | A `GenerateSingleton` asynchronous initializer is missing, non-static, or has an invalid `Task`/`ValueTask` signature |
+| **DP068** | Warning | A generated singleton is also registered as a DI Singleton, creating two lifecycle owners |
+| **DP069** | Info | A non-thread-safe generated singleton contains mutable instance state |
+| **DP070** | Info | Mutable static singleton state was detected; prefer an immutable `Lazy`-backed singleton or DI |
+| **DP071** | Warning | Mutable static singleton state is also registered as a DI Singleton |
+
 ## Code fixes
 
 `DesignPatterns.CodeFixes` ships inside the **`Skymly.DesignPatterns`** meta package (`analyzers/dotnet/cs`). Selected diagnostics offer one-click fixes in the IDE (requires C# Workspaces):
