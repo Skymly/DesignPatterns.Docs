@@ -40,7 +40,7 @@ The main [DesignPatterns](https://github.com/Skymly/DesignPatterns) CI checks ou
 
 ## NuGet consumption
 
-Package **`Skymly.DesignPatterns` `0.2.2`** is on [nuget.org](https://www.nuget.org/packages/Skymly.DesignPatterns) (early preview). In the samples repo, switch off the sibling project reference:
+Package **`Skymly.DesignPatterns` `0.2.3-preview1`** is on [nuget.org](https://www.nuget.org/packages/Skymly.DesignPatterns) (early preview). In the samples repo, switch off the sibling project reference:
 
 ```powershell
 dotnet run --project DesignPatterns.Samples.Strategy -c Release -p:UseLocalDesignPatterns=false

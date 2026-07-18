@@ -12,12 +12,12 @@
 
 | Package ID | Version | Contents |
 |------------|-------------------|----------|
-| [`Skymly.DesignPatterns`](https://www.nuget.org/packages/Skymly.DesignPatterns) | `0.2.2` | Meta package — runtime + source generator + analyzers + code fixes |
-| [`Skymly.DesignPatterns.Extensions.DependencyInjection`](https://www.nuget.org/packages/Skymly.DesignPatterns.Extensions.DependencyInjection) | `0.2.2` | MSDI extensions + `RegisterDi` generation |
-| [`Skymly.DesignPatterns.Extensions.Autofac`](https://www.nuget.org/packages/Skymly.DesignPatterns.Extensions.Autofac) | `0.2.2` | Autofac extensions + `RegisterAutofac` generation |
+| [`Skymly.DesignPatterns`](https://www.nuget.org/packages/Skymly.DesignPatterns) | `0.2.3-preview1` | Meta package — runtime + source generator + analyzers + code fixes |
+| [`Skymly.DesignPatterns.Extensions.DependencyInjection`](https://www.nuget.org/packages/Skymly.DesignPatterns.Extensions.DependencyInjection) | `0.2.3-preview1` | MSDI extensions + `RegisterDi` generation |
+| [`Skymly.DesignPatterns.Extensions.Autofac`](https://www.nuget.org/packages/Skymly.DesignPatterns.Extensions.Autofac) | `0.2.3-preview1` | Autofac extensions + `RegisterAutofac` generation |
 
 ```xml
-<PackageReference Include="Skymly.DesignPatterns" Version="0.2.2" />
+<PackageReference Include="Skymly.DesignPatterns" Version="0.2.3-preview1" />
 ```
 
 ::: info Deprecated GitHub-only IDs
