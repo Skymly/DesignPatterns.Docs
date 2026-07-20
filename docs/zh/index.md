@@ -27,7 +27,7 @@ features:
 ## 项目状态
 
 ::: warning 早期预览
-公共 API、生成代码形态与诊断 ID **尚未稳定**。请从 nuget.org 安装 [`Skymly.DesignPatterns`](https://www.nuget.org/packages/Skymly.DesignPatterns) `0.2.3-preview1`，或使用 sibling 克隆 / 固定 commit，直至稳定公告。
+公共 API、生成代码形态与诊断 ID **尚未稳定**。请从 nuget.org 安装 [`Skymly.DesignPatterns`](https://www.nuget.org/packages/Skymly.DesignPatterns) `0.2.3-preview2`，或使用 sibling 克隆 / 固定 commit，直至稳定公告。
 :::
 
 ## 下一步
@@ -35,6 +35,7 @@ features:
 | 页面 | 说明 |
 |------|------|
 | [快速开始](./getting-started.md) | 克隆布局、构建与首个特性 |
+| [配置桥接](./configuration.md) | `IConfiguration` → strategy 注册表桥接 |
 | [示例](./samples.md) | 可运行 [DesignPatterns.Samples](https://github.com/Skymly/DesignPatterns.Samples) |
 | [诊断](./diagnostics.md) | DP### 编译器消息 |
 | [参考与链接](./reference.md) | 仓库与包 |

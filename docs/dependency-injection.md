@@ -1,6 +1,6 @@
 # Dependency Injection
 
-Package: **`DesignPatterns.Extensions.DependencyInjection`**
+Package: **`Skymly.DesignPatterns.Extensions.DependencyInjection`**
 
 ## Overview
 
@@ -71,11 +71,14 @@ Set `DesignPatternsSampleKind=DependencyInjection` in sample projects for the sh
 
 ## Note on meta package
 
-The core **`Skymly.DesignPatterns`** NuGet meta package does **not** include the DI extension; reference `DesignPatterns.Extensions.DependencyInjection` from the main repo (sibling project) until a separate package is published.
+The core **`Skymly.DesignPatterns`** NuGet meta package does **not** include DI or Autofac extensions. Install them separately from nuget.org:
+
+- [`Skymly.DesignPatterns.Extensions.DependencyInjection`](https://www.nuget.org/packages/Skymly.DesignPatterns.Extensions.DependencyInjection)
+- [`Skymly.DesignPatterns.Extensions.Autofac`](https://www.nuget.org/packages/Skymly.DesignPatterns.Extensions.Autofac)
 
 ## Autofac integration
 
-The **`DesignPatterns.Extensions.Autofac`** package provides Autofac integration symmetric to the MSDI `RegisterDi` pattern. When referenced, the source generator emits `RegisterAutofac(ContainerBuilder)` and `Create(ILifetimeScope)` methods for Strategy, Factory, Handler, and State registries.
+The **`Skymly.DesignPatterns.Extensions.Autofac`** package provides Autofac integration symmetric to the MSDI `RegisterDi` pattern. When referenced, the source generator emits `RegisterAutofac(ContainerBuilder)` and `Create(ILifetimeScope)` methods for Strategy, Factory, Handler, and State registries.
 
 ```csharp
 var builder = new ContainerBuilder();
@@ -89,4 +92,4 @@ var registry = container.Resolve<IStrategyRegistry<string, IPaymentStrategy>>();
 - `sharing` — `InstanceSharing.Shared` (default, `SingleInstance()`) or `InstanceSharing.None` (`InstancePerDependency()`)
 - `serviceKey` — optional key for keyed registration
 
-The Autofac extension can be referenced alongside `DesignPatterns.Extensions.DependencyInjection` — both `RegisterDi` and `RegisterAutofac` methods are generated. The Autofac extension is **not** included in the meta package; reference it separately.
+The Autofac extension can be referenced alongside `Skymly.DesignPatterns.Extensions.DependencyInjection` — both `RegisterDi` and `RegisterAutofac` methods are generated. The Autofac extension is **not** included in the meta package; reference it separately.

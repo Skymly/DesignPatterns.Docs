@@ -37,16 +37,23 @@ The main [DesignPatterns](https://github.com/Skymly/DesignPatterns) CI checks ou
 | **DesignPatterns.Samples.GenerateSingleton** | `[GenerateSingleton]` |
 | **DesignPatterns.Samples.DependencyInjection** | `RegisterDi` for Strategy / Factory / Handler |
 | **DesignPatterns.Samples.State** | Manual `TransitionTableBuilder` + `[StateMachine]` order lifecycle |
+| **DesignPatterns.Samples.PluginAssemblies** | Multi-assembly `[RegisterStrategy]` + Autofac + `RegistryConfiguration` (`IConfiguration`) |
 
 ## NuGet consumption
 
-Package **`Skymly.DesignPatterns` `0.2.3-preview1`** is on [nuget.org](https://www.nuget.org/packages/Skymly.DesignPatterns) (early preview). In the samples repo, switch off the sibling project reference:
+Package **`Skymly.DesignPatterns` `0.2.3-preview2`** is on [nuget.org](https://www.nuget.org/packages/Skymly.DesignPatterns) (early preview). In the samples repo, switch off the sibling project reference:
 
 ```powershell
 dotnet run --project DesignPatterns.Samples.Strategy -c Release -p:UseLocalDesignPatterns=false
 ```
 
-Or set `UseLocalDesignPatterns` to `false` in `Directory.Build.props` / `Directory.Build.targets` when you only consume the published package.
+`PluginAssemblies` also needs `Skymly.DesignPatterns.Extensions.Autofac` and `Skymly.DesignPatterns.Extensions.Configuration` (pinned with the meta package in samples `Directory.Build.props`).
+
+```powershell
+dotnet run --project DesignPatterns.Samples.PluginAssemblies/Host -c Release -p:UseLocalDesignPatterns=false
+```
+
+Or set `UseLocalDesignPatterns` to `false` in `Directory.Build.props` / `Directory.Build.targets` when you only consume published packages.
 
 ::: info Deprecated package ID
 Do not use the old GitHub-only ID `DesignPatterns` (`0.1.0-preview1` / `preview2`). Use **`Skymly.DesignPatterns`** on nuget.org.

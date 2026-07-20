@@ -10,28 +10,28 @@
 元包在 [nuget.org](https://www.nuget.org/packages/Skymly.DesignPatterns) 上的 ID 为 **`Skymly.DesignPatterns`**。C# 命名空间仍为 `DesignPatterns.*`。
 
 ```xml
-<PackageReference Include="Skymly.DesignPatterns" Version="0.2.3-preview1" />
+<PackageReference Include="Skymly.DesignPatterns" Version="0.2.3-preview2" />
 ```
 
 也可以使用命令行安装：
 
 ```powershell
-dotnet add package Skymly.DesignPatterns --version 0.2.3-preview1
+dotnet add package Skymly.DesignPatterns --version 0.2.3-preview2
 ```
 
 ::: warning 早期预览
 公共 API、生成代码与 `DP###` 诊断**尚未稳定**。在稳定公告前请固定包版本或 Git commit。
 :::
 
-**可选 DI：** DI 集成作为独立包发布，不包含在元包中：
+**可选扩展**（不包含在元包中）：
 
 ```powershell
-dotnet add package Skymly.DesignPatterns.Extensions.DependencyInjection --version 0.2.3-preview1
-# 或使用 Autofac：
-dotnet add package Skymly.DesignPatterns.Extensions.Autofac --version 0.2.3-preview1
+dotnet add package Skymly.DesignPatterns.Extensions.DependencyInjection --version 0.2.3-preview2
+dotnet add package Skymly.DesignPatterns.Extensions.Autofac --version 0.2.3-preview2
+dotnet add package Skymly.DesignPatterns.Extensions.Configuration --version 0.2.3-preview2
 ```
 
-见[依赖注入](./dependency-injection.md)。
+见[依赖注入](./dependency-injection.md)与[配置桥接](./configuration.md)。
 
 ## 克隆布局（贡献者）
 
