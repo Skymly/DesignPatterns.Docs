@@ -84,6 +84,8 @@ IDE 帮助链接指向本页（`#dp###` 锚点）。
 
 **修复：** 各供应商使用不同 key，或每个契约维度只引用一个供应商。单程序集内重复 key 仍由 **DP003**（生成器）报告。
 
+见 [插件程序集示例](https://github.com/Skymly/DesignPatterns.Samples/tree/main/DesignPatterns.Samples.PluginAssemblies)、主仓 [PluginAssemblies.md](https://github.com/Skymly/DesignPatterns/blob/main/docs/PluginAssemblies.md)，以及本站[配置桥接](./configuration.md)。
+
 ## State 转换表（DP026–DP031） {#state-转换表-dp026-dp031}
 
 | ID | 级别 | 触发条件 |

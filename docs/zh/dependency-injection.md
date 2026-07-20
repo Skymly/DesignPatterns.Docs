@@ -1,6 +1,6 @@
 # 依赖注入
 
-包：**`DesignPatterns.Extensions.DependencyInjection`**
+包：**`Skymly.DesignPatterns.Extensions.DependencyInjection`**
 
 ## 概述
 
@@ -28,4 +28,9 @@ PaymentStrategyRegistry.RegisterDi(services);
 
 ## 说明
 
-核心元包 **`Skymly.DesignPatterns`** **不包含** DI 扩展；需要时请从主仓 sibling 引用 `DesignPatterns.Extensions.DependencyInjection`（独立 NuGet 包尚未发布）。
+核心元包 **`Skymly.DesignPatterns`** **不包含** DI / Autofac 扩展。请从 nuget.org 单独安装：
+
+- [`Skymly.DesignPatterns.Extensions.DependencyInjection`](https://www.nuget.org/packages/Skymly.DesignPatterns.Extensions.DependencyInjection)
+- [`Skymly.DesignPatterns.Extensions.Autofac`](https://www.nuget.org/packages/Skymly.DesignPatterns.Extensions.Autofac)
+
+Autofac 扩展提供与 `RegisterDi` 对称的 `RegisterAutofac(ContainerBuilder)` / `Create(ILifetimeScope)`。可与 MSDI 扩展并存；二者均不包含在元包中。

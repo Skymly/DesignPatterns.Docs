@@ -37,13 +37,20 @@ dotnet run --project DesignPatterns.Samples.Strategy -c Release
 | **DesignPatterns.Samples.GenerateSingleton** | `[GenerateSingleton]` |
 | **DesignPatterns.Samples.DependencyInjection** | Strategy / Factory / Handler 的 `RegisterDi` |
 | **DesignPatterns.Samples.State** | 手动 `TransitionTableBuilder` + `[StateMachine]` 订单生命周期 |
+| **DesignPatterns.Samples.PluginAssemblies** | 多程序集 `[RegisterStrategy]` + Autofac + `RegistryConfiguration`（`IConfiguration`） |
 
 ## NuGet 消费
 
-**`Skymly.DesignPatterns` `0.2.3-preview1`** 已发布至 [nuget.org](https://www.nuget.org/packages/Skymly.DesignPatterns)（早期预览）。在示例仓关闭 sibling 项目引用：
+**`Skymly.DesignPatterns` `0.2.3-preview2`** 已发布至 [nuget.org](https://www.nuget.org/packages/Skymly.DesignPatterns)（早期预览）。在示例仓关闭 sibling 项目引用：
 
 ```powershell
 dotnet run --project DesignPatterns.Samples.Strategy -c Release -p:UseLocalDesignPatterns=false
+```
+
+`PluginAssemblies` 还需 `Skymly.DesignPatterns.Extensions.Autofac` 与 `Skymly.DesignPatterns.Extensions.Configuration`（示例仓 `Directory.Build.props` 已与元包一并钉住版本）。
+
+```powershell
+dotnet run --project DesignPatterns.Samples.PluginAssemblies/Host -c Release -p:UseLocalDesignPatterns=false
 ```
 
 或在 `Directory.Build.props` / `Directory.Build.targets` 中将 `UseLocalDesignPatterns` 设为 `false`。

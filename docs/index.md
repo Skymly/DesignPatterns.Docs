@@ -27,7 +27,7 @@ features:
 ## Status
 
 ::: warning Early preview
-Public APIs, generated code shapes, and diagnostic IDs are **not stable** yet. Install [`Skymly.DesignPatterns`](https://www.nuget.org/packages/Skymly.DesignPatterns) `0.2.3-preview1` from nuget.org, or use a sibling clone / pin a commit until a stability announcement.
+Public APIs, generated code shapes, and diagnostic IDs are **not stable** yet. Install [`Skymly.DesignPatterns`](https://www.nuget.org/packages/Skymly.DesignPatterns) `0.2.3-preview2` from nuget.org, or use a sibling clone / pin a commit until a stability announcement.
 :::
 
 ## Where to read next
@@ -35,6 +35,7 @@ Public APIs, generated code shapes, and diagnostic IDs are **not stable** yet. I
 | Page | Purpose |
 |------|---------|
 | [Getting started](./getting-started.md) | Clone layout, build, and first attribute |
+| [Configuration](./configuration.md) | `IConfiguration` → strategy registry bridge |
 | [Samples](./samples.md) | Runnable [DesignPatterns.Samples](https://github.com/Skymly/DesignPatterns.Samples) repo |
 | [Diagnostics](./diagnostics.md) | DP### compiler messages |
 | [Reference](./reference.md) | Repositories and packages |

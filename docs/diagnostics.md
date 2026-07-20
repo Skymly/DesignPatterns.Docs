@@ -85,7 +85,7 @@ See also [Registry key conventions](./registry-key-conventions.md).
 
 **Fix:** use distinct keys per provider assembly, or reference only one provider per contract dimension. Duplicate keys within a **single** assembly remain **DP003** (generator).
 
-See [Plugin assemblies sample](https://github.com/Skymly/DesignPatterns.Samples/tree/main/DesignPatterns.Samples.PluginAssemblies) and the main repo [PluginAssemblies.md](https://github.com/Skymly/DesignPatterns/blob/main/docs/PluginAssemblies.md).
+See [Plugin assemblies sample](https://github.com/Skymly/DesignPatterns.Samples/tree/main/DesignPatterns.Samples.PluginAssemblies), the main repo [PluginAssemblies.md](https://github.com/Skymly/DesignPatterns/blob/main/docs/PluginAssemblies.md), and [Configuration](./configuration.md).
 
 ## State transition table (DP026–DP031) {#state-transition-table-dp026-dp031}
 
