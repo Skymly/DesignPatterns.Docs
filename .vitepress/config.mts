@@ -59,6 +59,8 @@ const zhSidebar = [
 
 export default defineConfig({
   srcDir: 'docs',
+  // Maintainer-only mattpocock/skills config — not part of the user site
+  srcExclude: ['**/agents/**'],
   vite: {
     define: {
       __SITE_META__: JSON.stringify(siteBuildMeta),
